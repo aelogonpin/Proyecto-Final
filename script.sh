@@ -1,4 +1,7 @@
 #!/bin/bash
+#Esto me permite en la maquina virtual poder modificar los valores necesarios
+#para acceder con ssh sin ningun requisito extra 
+
 sudo mv /etc/ssh/sshd_config /etc/ssh/sshd_config2
 
 sudo echo "#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $

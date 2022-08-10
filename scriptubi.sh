@@ -1,4 +1,5 @@
 #!/bin/bash
+#clavo
 ls -lha
 echo "Procedemos a realizar la invocación de la maquina..."
 mkdir vm-ubuntu 2>&1

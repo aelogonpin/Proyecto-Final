@@ -19,7 +19,7 @@
 echo '<pre>';
 
 //$last_line = system ('bash /var/www/html/scriptubi.sh',$retval);
-$last_line = system ('sudo bash scriptubi.sh',$retval);
+$last_line = system ('bash scriptuser.sh',$retval);
 
 // Printing additional info 
 echo '

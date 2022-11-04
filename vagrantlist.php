@@ -17,12 +17,12 @@
   <?php
 echo '<pre>';
 // .escapeshellarg($folder) UTILIZA LAS VARIABLES 
-$last_line = system ('cd vm-ubuntu 2>&1 && vagrant destroy -f 2>&1',$retval);
+$last_line = system ('cd vm-ubuntu 2>&1 &&  sudo vagrant destroy -f 2>&1',$retval);
 //$last_line = system ('cd vm-ubuntu && vagrant global-status && vagrant destroy 5487e2b -f 2>&1',$retval);
 ?>
 
 
-<a href='/hola3.html'><button>Servicio KVM</button></a> 
+<a href='../Pagina_base/index.html'><button>Servicio KVM</button></a> 
 <br><br><br>
 
 

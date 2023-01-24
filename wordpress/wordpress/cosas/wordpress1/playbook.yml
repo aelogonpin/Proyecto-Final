@@ -1,0 +1,119 @@
+
+---
+- hosts: all
+  become: yes
+  vars_files:
+    - vars/default.yml
+  tasks:
+#Crear un grupo llamado wordpress
+  - name: Make sure we have a 'wordpress' group
+    group:
+      name: wordpress
+      state: present
+
+  - name: Allow 'wordpress' group to have passwordless sudo
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^%wordpress'
+      line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+      validate: '/usr/sbin/visudo -cf %s'
+
+# User + Key Setup
+  - name: Create a new regular user with sudo privileges
+    user:
+      name: "administrador"
+      state: present
+      groups: wordpress
+      append: true
+      create_home: true
+      shell: /bin/bash
+
+  - name: Set authorized key for remote user
+    authorized_key:
+      user: "administrador"
+      state: present
+      key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+
+  - name: Disable password authentication for root
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      state: present
+      regexp: '^#?PermitRootLogin'
+      line: 'PermitRootLogin prohibit-password'
+
+# Install required packages for Wordpress
+  - name: Install required packages
+    apt:
+      name:
+      - apache2
+      - mysql-server
+      - libapache2-mod-php
+      - php-mysql
+      state: latest
+    
+# Create Document Root folder
+  - name: Create document root
+    file: 
+      path: '{{ DOCUMENT_ROOT_DIR }}'
+      state: directory
+      owner: 'www-data'
+      group: 'www-data'
+      mode: 0755
+
+# Download WordPress and uncompress
+  - name: Download and unpack latest WordPress
+    unarchive:
+      src: https://es.wordpress.org/latest-es_ES.tar.gz
+      dest: '{{ DOCUMENT_ROOT_DIR }}'
+      remote_src: yes
+      extra_opts: [--strip-components=1]
+
+# Set permissions for Document_Root
+  - name: Set ownership
+    file:
+      path: '{{ DOCUMENT_ROOT_DIR }}'
+      state: directory
+      recurse: yes
+      owner: 'www-data'
+      group: 'www-data'
+
+# Configure Apache
+  - name: Configure Apache Configuration
+    replace:
+      dest='/etc/apache2/mods-available/dir.conf'
+      regexp='DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm'
+      replace='DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm'
+
+# Restart Apache server service
+  - name: Restart service apache2
+    service:
+      name: apache2
+      state: restarted
+
+# Create MySQL Database
+  - name: create a new database  
+    mysql_db: 
+      name: testdb 
+      state: present   
+
+
+# Remove MySQL grants for wordpress user
+  - name: Remove grants for wordpress user
+    mysql_user:
+      login_user: '{{ MARIADB_ADMIN_USER }}'
+      login_password: '{{ MARIADB_ADMIN_PASSWORD }}'
+      name: '{{ MARIADB_USERNAME }}'
+      password: '{{ MARIADB_USERPASSWD }}'
+      priv: '{{ MARIADB_DBNAME }}.*:ALL'
+      state: absent
+
+# Create MySQL User
+  - name: Create MySQL user for WordPress
+    mysql_user:
+      login_user: '{{ MARIADB_ADMIN_USER }}'
+      login_password: '{{ MARIADB_ADMIN_PASSWORD }}'
+      name: '{{ MARIADB_USERNAME }}'
+      password: '{{ MARIADB_USERPASSWD }}'
+      priv: '{{ MARIADB_DBNAME }}.*:ALL'
+      state: present

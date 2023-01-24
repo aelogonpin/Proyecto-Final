@@ -17,11 +17,10 @@
 
   <?php
 echo '<pre>';
-#$last_line = system ('sudo bash /home/eloy/Documentos/repositorios/GIT-HUB-ELOY/egdep/lenguaje/proyectofin-curso/vagrant.sh
-#',$retval);
+
 
 //$last_line = system ('bash /var/www/html/scriptubi.sh',$retval);
-//$last_line = system ('bash scriptubi2.sh',$retval);
+$last_line = system ('bash scriptubi2.sh',$retval);
 
 // Printing additional info 
 echo '
@@ -32,11 +31,8 @@ echo "<br><br>";
 
 
 
-
-
-
 echo "<form>
-<a href='/vagrantlist2.php'><button>Eliminar maquina</button></a>
+<a href='./vagrantlist2.php'><button>Eliminar maquina</button></a>
 <a href='http://".$last_line."'><button>Entra a pagina web</button></a></form>"
 ?>
 

@@ -1,0 +1,7 @@
+DOCUMENT_ROOT_DIR: "/var/www/html/"
+MARIADB_ADMIN_USER: "root"
+MARIADB_ADMIN_PASSWORD: "root"
+MARIADB_HOST: "localhost"
+MARIADB_DBNAME: "wp"
+MARIADB_USERNAME: "wpuser"
+MARIADB_USERPASSWD: "wppassword"

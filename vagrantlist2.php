@@ -21,7 +21,7 @@ $last_line = system ('cd vm-ubuntu-bento 2>&1 && vagrant destroy -f 2>&1',$retva
 ?>
 
 
-<a href='/hola3.html'><button>Servicio KVM</button></a> 
+<a href='../../login/vistas/pag_inicio.php'><button>Servicio KVM</button></a> 
 <br><br><br>
 
 

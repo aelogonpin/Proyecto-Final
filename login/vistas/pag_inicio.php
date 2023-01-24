@@ -317,7 +317,7 @@ of Simple CSS Waves-->
 <div class="header">
   <nav>
     <ul class="menu">
-      <li><a href="/base.html">Inicio</a></li>
+      <li><a href="../../Pagina_base/index.html">Inicio</a></li>
       <li><a href="#!">Dudas</a></li>
       <li><a href="#!">Guía</a></li>
       <li><a href="#!">FAQ</a></li>

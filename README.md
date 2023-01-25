@@ -5,4 +5,4 @@ Este repositorio tendrá todo lo necesario para poder utilizar todo el proyecto 
 Proyecto-Final/login/vistas/pag_inicio.php
 
 ## Para clonar una branch en concreto utiliza:
-"GIT CLONE -B "<BRANCH-NAME>" "<URL>" "
+"GIT CLONE -B "BRANCH-NAME" "URL" "

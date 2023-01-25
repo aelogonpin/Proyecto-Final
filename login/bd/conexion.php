@@ -1,7 +1,7 @@
 <?php 
 class Conexion{	  
     public static function Conectar() {        
-        define('servidor', 'localhost');
+        define('servidor', '192.168.48.135');
         define('nombre_bd', 'definitivo');
         define('usuario', 'root');
         define('password', 'Eloyto11#');					        

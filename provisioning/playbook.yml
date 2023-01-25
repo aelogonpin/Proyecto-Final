@@ -1,8 +1,0 @@
-# Recreating a plesk ubuntu server setup
-- hosts: all
-
-  roles:
-    - server
-    - php
-    - mysql
-    - wordpress

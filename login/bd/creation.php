@@ -12,7 +12,7 @@
 
 <?php
 
-$conexion = mysqli_connect("localhost","root","Eloyto11#","definitivo");
+$conexion = mysqli_connect("192.168.48.135","root","Eloyto11#","definitivo");
 
 $usuario = $_POST["username"];
 $password = md5($_POST["password"]);

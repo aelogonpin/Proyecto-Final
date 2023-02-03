@@ -34,7 +34,7 @@
 					</div>
 					<input type="submit" value="SIGNUP">
 				</form>
-				<p>¿Tienes ya creada una cuenta? <a href="../index.php">Inicia Sesión<a></p>
+				<p>Tienes ya creada una cuenta? <a href="index.php">¡Inicia Sesión!<></p>
 			</div>
 		</div>
 			</div>

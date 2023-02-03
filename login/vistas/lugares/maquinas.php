@@ -1,5 +1,7 @@
+
+  <?php 
   
-<!--   /* // Iniciar sesión SSH
+  /* // Iniciar sesión SSH
   $connection = ssh2_connect('192.168.48.173', 22);
   ssh2_auth_password($connection, 'root', 'Admin.123');
 
@@ -9,8 +11,7 @@
   stream_set_blocking($stream, true);
   $output = stream_get_contents($stream);
   echo $output; */
- -->
-  <?php 
+   
    ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);

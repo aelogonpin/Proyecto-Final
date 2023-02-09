@@ -1,6 +1,6 @@
 
   <?php 
-  
+  //Recuerda de utilizar los comandos de comentarios de cosas importantes en el tema de comentarios del campo de php
   /* // Iniciar sesión SSH
   $connection = ssh2_connect('192.168.48.173', 22);
   ssh2_auth_password($connection, 'root', 'Admin.123');

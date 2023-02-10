@@ -160,7 +160,7 @@
 
 	<script>
 		function cambia_de_pagina(){
-		  location.href="../login/index.php"
+		  location.href="../login/"
 		}
 	  </script>
 
@@ -169,6 +169,12 @@
 		  location.href="https://github.com/aelogonpin/Proyecto-Final"
 		}
 	  </script>
+
+<script>
+	function cambia_de_pagina3(){
+	  location.href="https://192.168.48.102:8006"
+	}
+  </script>
 
 	</head>
 	<body>
@@ -184,11 +190,11 @@
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav navbar-right">
 		            <li class="active"><a href="#" data-nav-section="home"><span>Inicio</span></a></li>
-		            <li><a href="#" data-nav-section="testimonials"><span>Phpmyadmin</span></a></li>
+		            <li><a href="#" data-nav-section="testimonials"><span>Conceptos generales</span></a></li>
 		            <li><a href="#" data-nav-section="services"><span>Servicios</span></a></li>
 		            <li><a href="#" data-nav-section="about"><span>Sobre mi</span></a></li>
-		            <li><a href="#" data-nav-section="contact"><span>Otros</span></a></li>
-					<li><a href="#" onclick="javascript:cambia_de_pagina();" ><span>Proxmox</span></a></li>
+					<li><a href="#" onclick="javascript:cambia_de_pagina();" ><span>Login</span></a></li>
+					<li><a href="#" onclick="javascript:cambia_de_pagina3();" ><span>Proxmox</span></a></li>
 		          </ul> 
 				  <div id="botones">
 					<a onclick="javascript:cambia_de_pagina2" href="https://github.com/aelogonpin/Proyecto-Final"><img src="https://cdn-icons-png.flaticon.com/512/1051/1051377.png" width="25" alt=""></a>
@@ -217,8 +223,8 @@
 		<div class="slant"></div>
 	</section>
 
-	<section id="fh5co-intro">
-		<div class="container">
+	<!-- <section id="fh5co-intro">
+		<div class="container">	
 			<div class="row row-bottom-padded-lg">
 				<div class="fh5co-block to-animate" style="background-image: url(images/img_7.jpg);">
 					<div class="overlay-darker"></div>
@@ -251,13 +257,9 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="row watch-video text-center to-animate">
-				<span>Ver el video</span>
-
-				<a href="https://www.youtube.com/watch?v=SOv-UvIXaiM" class="popup-vimeo btn-video"><i class="icon-play2"></i></a>
-			</div> -->
+			
 		</div>
-	</section>
+	</section> -->
 
 	<section id="fh5co-testimonials" data-section="testimonials">
 		<div class="container">
@@ -324,12 +326,20 @@
 					<h2 class=" left-border to-animate">Servicios</h2>
 					<div class="row">
 						<div class="col-md-8 subtext to-animate">
-							<a style="color:white ;" href="../login/index.php">Pulsa aqui para accerder al Servicio KVM</a>
+							<a style="color:white ;" href="../login/index.php">Pulsa aqui para accerder al Dashboard</a>
 						</div>
+<br><br>	
+						<div class="col-md-8 subtext to-animate">
+							<a style="color:white ;" href="https://192.168.48.102:8006	">Pulsa aqui para accerder al Server Proxmox</a>
+						</div>
+
+
+
+
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-md-6 col-sm-6 fh5co-service to-animate">
 					<i class="icon to-animate-2 icon-anchor"></i>
 					<h3>Seguro &amp; Estrategico</h3>
@@ -339,19 +349,19 @@
 					<i class="icon to-animate-2 icon-layers2"></i>
 					<h3>Web &amp; Interface</h3>
 					<p>Este interfaz permite realizar interacciones con el servidor mediante botones que realizan la mayoria de las acciones con la mayor explicación y brevedad posible.</p>
-				</div>
+				</div> -->
 
 				<div class="clearfix visible-sm-block"></div>
 
 				<div class="col-md-6 col-sm-6 fh5co-service to-animate">
 					<i class="icon to-animate-2 icon-video2"></i>
-					<h3>Usuarios &amp; Roles</h3>
-					<p>Los usuarios para cualquier acción del sistema tendrán que tener cuentas con permisos y roles especificos que le permitiran tener acceso a lo que los admnistrador crean convenientes.</p>
+					<h3>Monitorización &amp; Roles</h3>
+					<p>Los usuarios para cualquier acción del sistema tendrán que tener cuentas con permisos y roles especificos que le permitiran tener acceso a determinados apartados	.</p>
 				</div>
 				<div class="col-md-6 col-sm-6 fh5co-service to-animate">
 					<i class="icon to-animate-2 icon-monitor"></i>
-					<h3>CMS &amp; eCommerce</h3>
-					<p>Este proyecto tambien se centra en servicios de CMS basado en Wordpress o Owncloud que nos dará vida.</p>
+					<h3>Automatización &amp; Optimización</h3>
+					<p>Este proyecto tambien se centra en servicios de automatización y con altas velocidades de ejecución gracias al sistema cluster de los nodos del servidor </p>
 				</div>
 				
 			</div>

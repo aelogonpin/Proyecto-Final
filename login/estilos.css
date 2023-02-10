@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #11998e, #38ef7d);
+  background-color: white;
 }
 
 #login .container #login-row #login-column #login-box {

@@ -1,23 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <link rel="shortcut icon" href="#" />
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="utf-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login con  PHP - Bootstrap 4</title>
+    <title></title>
     
-     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="estilos.css">
     
     <link rel="stylesheet" href="plugins/sweet_alert2/sweetalert2.min.css">
 </head>
+
 <body>
+
     <div id="login">
         <h3 class="text-center text-white display-4">Login con PHP</h3>
         <div class="container" >                        
-            <div id="login-row" class="row justify-content-center align-items-center">
+           <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12  bg-light text-dark">
                         <form id="formLogin" class="form" action="" method="post">

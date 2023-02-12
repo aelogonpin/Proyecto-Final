@@ -27,6 +27,11 @@ input[type="text"] {
   margin-right: 5px;
 }
 
+input[type="password"] {
+  width: 35%;
+  margin-right: 5px;
+}
+
 input[type="submit"] {
   /*width: 45%;*/
 }
@@ -46,7 +51,7 @@ style=" fill:#000000;"><path d="M19.5,95c-3.584,0-6.5-2.916-6.5-6.5V50.822C12.50
                 <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
               
                     <li>
-                        <a href="index.php" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                        <a href="../serviciousers" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 width="100" height="100"
 viewBox="0 0 100 100"
@@ -89,7 +94,7 @@ style=" fill:#000000;"><path d="M82.047,94.126c-3.179-0.073-6.167-1.436-8.351-3.
 
             $connection = ssh2_connect('192.168.48.102',22);
             ssh2_auth_password($connection, 'root', 'Admin.123');
-            $comando = "pveum user delete ".$parametro2;
+            $comando = "pveum user delete ".$parametro2."@pve";
             $stream = ssh2_exec($connection, $comando);
             echo '
             <script>
@@ -102,15 +107,55 @@ style=" fill:#000000;"><path d="M82.047,94.126c-3.179-0.073-6.167-1.436-8.351-3.
 
     ?>
 
+<?php 
+            if (isset($_REQUEST['button2'])) {
+                $parametro1 = $_POST['nombre'];
+                $parametro2 = $_POST['contraseña'];
+                ini_set('display_errors', 1);
+                ini_set('display_startup_errors', 1);
+                error_reporting(E_ALL);
 
+            $connection = ssh2_connect('192.168.48.102',22);
+            ssh2_auth_password($connection, 'root', 'Admin.123');
+            $comando = "pveum useradd " .$parametro1. "@pve --password " .$parametro2;
+             $stream = ssh2_exec($connection, $comando);
+            echo '
+            <script>
+            alert("Usuario creado");
+            window.location.href = "index.php";
+            </script>
+            ';  
+            
+            }
 
+    ?>
 
+<?php 
+            if (isset($_REQUEST['button3'])) {
+                $parametro1 = $_POST['usuario'];
+                $parametro2 = $_POST['permisos'];
+                ini_set('display_errors', 1);
+                ini_set('display_startup_errors', 1);
+                error_reporting(E_ALL);
 
+            $connection = ssh2_connect('192.168.48.102',22);
+            ssh2_auth_password($connection, 'root', 'Admin.123'); 
+             $comando = "pveum aclmod / -user " .$parametro1."@pve -role " .$parametro2;
+             $stream = ssh2_exec($connection, $comando);
+            echo '
+            <script>
+            alert("Usuario con permisos modificados");
+            window.location.href = "index.php";
+            </script>
+            ';   
+            
+            }
 
+    ?>
 
 
 <div>
-
+<H4>Eliminar usuarios</H4>
     <form action="" method="post">
         <input type="text" name="nombre" placeholder="Nombre del usuario">
         <input type="submit" name="button1" value="Borrar usuario">
@@ -118,14 +163,23 @@ style=" fill:#000000;"><path d="M82.047,94.126c-3.179-0.073-6.167-1.436-8.351-3.
         
 </form>
 <br><br>
-
-<form action="">
+<H4>Añadir usuarios</H4>
+<form action="" method="post">
 <input type="text" name="nombre" placeholder="Nuevo nombre del usuario">
-        <input type="button" name="button2" value="Proximamente">
+<input type="password" name="contraseña" placeholder="Nueva contraseña del usuario">
+        <input type="submit" name="button2" value="Crear usuario">
 </form>
 
-
-
+<br><br>
+<H4>Modificar usuarios</H4>
+<form action="" method="post">
+  <input type="text" name="usuario" placeholder=" Nombre del usuario">
+  <select name="permisos">
+    <option value="Administrator">Administrador</option>
+    <option value="PVEVMAdmin">Usuario</option>
+  </select>
+  <input type="submit" name="button3" value="Crear usuario">
+</form>
 
 
 

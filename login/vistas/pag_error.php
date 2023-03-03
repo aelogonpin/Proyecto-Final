@@ -92,7 +92,7 @@ if ($_SESSION["s_usuario"] === null){
           <div class="col-md-4">
             <h2>Roles y administración</h2>
             <p>Si necesitas mas privilegios para administrar el servidor pulsa aqui y rellena este formulario para solicitarlo </p>
-            <p><a class="btn btn-secondary" href="#" role="button">Here &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="lugares/creaciones/index.html" role="button">Here &raquo;</a></p>
           </div>
           <!-- <div class="col-md-3">
             <h2>Dashboard</h2>

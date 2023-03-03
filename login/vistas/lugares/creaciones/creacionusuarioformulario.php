@@ -144,33 +144,51 @@ h1 {
 <div id="wrapper">
 
         <?php
-                $user = $_POST['user'];
-                $password = $_POST['password'];
-                $another = $_POST['another']; 
-                    // if the user does not exist, create it
-                    
-                    
-                    
-                    
+       $usuario=$_POST["user"];
+ require 'PHPMailer/Exception.php';
+ require 'PHPMailer/PHPMailer.php';
+ require 'PHPMailer/SMTP.php';
 
-                    $create_user = " /root/apinewservidor.sh $user $password $another ";
 
-                
+ use PHPMailer\PHPMailer\PHPMailer;
+ use PHPMailer\PHPMailer\SMTP;
+ use PHPMailer\PHPMailer\Exception;
+ 
+ $mail = new PHPMailer(true);
 
-                /*  Esta perfe */
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'eloyrana@gmail.com';                     //SMTP username
+    $mail->Password   = 'jorzoajevwzdjbtk';                               //SMTP password
+    $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-                ini_set('display_errors', 1);
-                ini_set('display_startup_errors', 1);
-                error_reporting(E_ALL);
-                
-                $connection = ssh2_connect('192.168.48.102',22);
-                ssh2_auth_password($connection, 'root', 'Admin.123');
-                
-                $stream = ssh2_exec($connection, $create_user);
-                stream_set_blocking($stream, true);
-                $stream_out = ssh2_fetch_stream($stream, SSH2_STREAM_STDIO);
-                $output=stream_get_contents($stream_out);
-                echo "<pre>".preg_replace("/\r\n|\r|\n/", "<br>", $output)."</pre>"; 
+    //Recipients
+    $mail->setFrom('eloyrana@gmail.com', 'Mailer');
+    $mail->addAddress('eloyrana@gmail.com', 'Joe User');     //Add a recipient
+
+
+
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = 'This is the HTML message body'.$usuario. '<b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
+
+
+
         ?>
 		</div>
 	</div>

@@ -26,12 +26,10 @@ if ($_SESSION["s_usuario"] === null){
 </head>
 <body>
 
-
-
 <!-- Aqui codigo de boostrap -->
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <img width=50px height=50px src="https://static-cdn.jtvnw.net/jtv_user_pictures/de3f3df2-4a4b-432c-8d6c-8e27199ed9a8-profile_image-300x300.jpeg" alt="">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,22 +37,14 @@ if ($_SESSION["s_usuario"] === null){
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="http://192.168.48.169/login/vistas/pag_error.php">Home <span class="sr-only">(current)</span></a>
           </li>
          
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="http://192.168.48.169/Pagina_base/">Pagina Principal</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            <a class="nav-link disabled" href="#">Proximamente...</a>
           </li>
           <li>
             <div>
@@ -93,12 +83,12 @@ if ($_SESSION["s_usuario"] === null){
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-          <div class="col-md-4">
+         <!--  <div class="col-md-4">
             <h2>Creación del usuario</h2>
             <p>Para crear el usuario para su servicio proxmox.
                 Pulse aqui para crear su usuario proxmox </p>
             <p><a class="btn btn-secondary" href="lugares/creaciones/index.html" role="button">Crear cuenta &raquo;</a></p>
-          </div>
+          </div> -->
           <div class="col-md-4">
             <h2>Roles y administración</h2>
             <p>Si necesitas mas privilegios para administrar el servidor pulsa aqui y rellena este formulario para solicitarlo </p>
@@ -110,7 +100,7 @@ if ($_SESSION["s_usuario"] === null){
             <p><a class="btn btn-secondary" href="./lugares/maquinas.php" role="button">Ver &raquo;</a></p>
           </div> -->
           <div class="col-md-4">
-            <h2>Server</h2>
+            <h2>Servidor Proxmox</h2>
             <p>Server</p>
             <p><a class="btn btn-secondary" href="https://192.168.48.173:8006" role="button">Entrar &raquo;</a></p>
           </div>

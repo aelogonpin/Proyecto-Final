@@ -95,7 +95,7 @@ body {
                             </div>                            
                         </form>
                         <br><br>
-                        <form action="./bd/register.php">
+                        <form action="./bd/register.html">
                             <h3 class="text-center ">¿Necesitas registrarte?</h3>
                                 <input type="submit" class="btn btn-dark btn btn-block" value="Registrarse" />
                         </form>

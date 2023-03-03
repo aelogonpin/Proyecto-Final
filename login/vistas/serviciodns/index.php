@@ -111,7 +111,7 @@ style=" fill:#000000;"><path d="M82.047,94.126c-3.179-0.073-6.167-1.436-8.351-3.
     stream_set_blocking($stream, true);
     $stream_out = ssh2_fetch_stream($stream, SSH2_STREAM_STDIO);
     echo "<pre>".stream_get_contents($stream_out)."</pre>";  
-    $salida = stream_conget_tents($stream_out);
+  
    // echo '<script>window.location.href = "index.php";</script>';
    echo '
    <script>

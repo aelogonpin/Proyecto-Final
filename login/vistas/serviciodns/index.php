@@ -3,7 +3,7 @@
     <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta charset="utf-8">
-    
+    <link rel="stylesheet" href="../../plugins/sweet_alert2/sweetalert2.min.css "> 
     <style>
 form {
    display: flex; 
@@ -110,18 +110,22 @@ style=" fill:#000000;"><path d="M82.047,94.126c-3.179-0.073-6.167-1.436-8.351-3.
     $stream = ssh2_exec($connection, $comando);
     stream_set_blocking($stream, true);
     $stream_out = ssh2_fetch_stream($stream, SSH2_STREAM_STDIO);
-    echo "<pre>".stream_get_contents($stream_out)."</pre>";  
+    echo "<pre>".stream_get_contents($stream_out)."</pre>";
+
+
   
    // echo '<script>window.location.href = "index.php";</script>';
-   echo '
+   /* echo '
    <script>
     alert("Insercción completada");
     window.location.href = "index.php";
 </script>
-';
+'; */
 
-
-      }
+echo '<script>var condicionCumplida = true;</script>';
+}else {
+  echo '<script>var condicionCumplida = false;</script>';
+    }
 
     ?>
 
@@ -146,12 +150,11 @@ echo "<pre>".stream_get_contents($stream_out)."</pre>";
  
 //echo '<script>window.location.href = "index.php";</script>';
 
-echo '
+ echo '
         <script>
-        alert("Insercción completada");
-        window.location.href = "index.php";
+        window.location.href = "../serviciodns";
         </script>
-    ';
+    '; 
 
 }
 
@@ -180,4 +183,6 @@ echo '
 
 
   </body>
+  <script src="../../plugins/sweet_alert2/sweetalert2.all.min.js"></script>
+  <script src="../../codigo4.js"></script>
 </html>

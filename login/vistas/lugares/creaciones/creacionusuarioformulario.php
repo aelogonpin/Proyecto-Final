@@ -145,6 +145,8 @@ h1 {
 
         <?php
        $usuario=$_POST["user"];
+       $permisos=$_POST["permiso"];
+       $datos=$_POST["datos"];
  require 'PHPMailer/Exception.php';
  require 'PHPMailer/PHPMailer.php';
  require 'PHPMailer/SMTP.php';
@@ -163,42 +165,37 @@ try {
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'eloyrana@gmail.com';                     //SMTP username
-    $mail->Password   = 'contraseña de app de google';                               //SMTP password
+    $mail->Password   = 'jorzoajevwzdjbtk';                               //SMTP password
     $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('eloyrana@gmail.com', 'Mailer');
-    $mail->addAddress('eloyrana@gmail.com', 'Joe User');     //Add a recipient
+    $mail->setFrom('eloyrana@gmail.com', 'MailPHPProx');
+    $mail->addAddress('a_elogonpin@iestriana.com', 'Eloy Gonzalez');     //Add a recipient
 
 
 
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body'.$usuario. '<b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->Subject = 'Solicitud de permisos Proxmox';
+    $mail->Body    = 'El usuario '.$usuario. ' te solicita el usuario <bold>' .$permisos. '</bold>: <br> 
+    <pre>'.$datos.'</pre>';
+    $mail->AltBody = 'Solicitud de permisos Proxmox';
 
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    $mail->send();    
+}  catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; 
 }
 
-
-
-
         ?>
-		</div>
+
+<script src="../../../plugins/sweet_alert2/sweetalert2.all.min.js"></script>
+<script src="../../../codigo3.js"></script>
+
+</div>
 	</div>
-    <br>
-    <div style="text-align: center;">
-    <form method="get" action="https://192.168.48.102:8006">
- <button type="submit">Entra al servidor
-</form>
-		</div>
-      
+    <br>      
      
 </div>
 		</div>

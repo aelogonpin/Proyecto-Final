@@ -1,3 +1,15 @@
+<?php
+session_start();
+//Si nadie incio
+if($_SESSION["s_idRol"]== 2){
+      header("Location: vistas/pag_error.php");
+    }
+   
+
+?>
+
+
+
 <!doctype html>
 <html lang="es">
 <head>

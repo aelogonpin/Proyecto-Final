@@ -1,3 +1,20 @@
+<?php 
+session_start();
+
+//Si nadie incio
+if ($_SESSION["s_usuario"] === null){
+	header("Location: ../index.php");
+}else{
+    if($_SESSION["s_idRol"]!=1){
+      header("Location: ../../index.php");
+    }
+   
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>

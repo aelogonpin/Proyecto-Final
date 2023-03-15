@@ -159,11 +159,6 @@ if (isset($_POST['script3'])) {
 
 }
 
-
-
-
-
-
 ?>
 
 

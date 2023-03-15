@@ -73,9 +73,6 @@ input[type="password"] {
             </div>
         </div> 
 
-
-
-
         <!-- A continuacion tendras la tabla con la configuracion y partes de las tablas -->
 
 <h2>Direcciones DNS</h2>
@@ -97,9 +94,7 @@ input[type="password"] {
             $stream_out = ssh2_fetch_stream($stream, SSH2_STREAM_STDIO);
             echo "<pre>".stream_get_contents($stream_out)."</pre>";  
         
-        
         ?>
-
 
 <?php 
             if (isset($_REQUEST['button1'])) {
@@ -163,23 +158,17 @@ input[type="password"] {
 
     ?>
 
-
     </div>
-      
-
-
-     
-    
     <div>
                         <H4>Eliminar usuarios</H4>
                         <form action="" method="post">
                             <input type="text" name="nombre" placeholder="Nombre del usuario">
                             <input type="submit" name="button1" value="Borrar usuario">
-
-
                         </form>
+
                         <br><br>
                         <H4>Añadir usuarios</H4>
+
                         <form action="" method="post">
                             <input type="text" name="nombre" placeholder="Nuevo nombre del usuario">
                             <input type="password" name="contraseña" pattern="^(?=.*[A-Z]).{8,}$"  placeholder="Nueva contraseña del usuario">
@@ -196,10 +185,6 @@ input[type="password"] {
                             </select>
                             <input type="submit" name="button3" value="Modificar usuario">
                         </form>
-
-
-
-
 
                     </div>
 

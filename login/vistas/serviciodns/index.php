@@ -12,9 +12,6 @@ if ($_SESSION["s_usuario"] === null){
 }
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html>
     <head>

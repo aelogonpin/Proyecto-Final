@@ -75,7 +75,7 @@ input[type="password"] {
 
         <!-- A continuacion tendras la tabla con la configuracion y partes de las tablas -->
 
-<h2>Direcciones DNS</h2>
+<h2>Gestion de Usuarios</h2>
 <br><br><br><br>
 <div>
       
